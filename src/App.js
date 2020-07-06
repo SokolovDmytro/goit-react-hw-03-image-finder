@@ -41,7 +41,7 @@ class App extends Component {
 
   handleOnSubmit = async e => {
     e.preventDefault();
-    await this.setState({ galleryItems: [] });
+    await this.setState({ galleryItems: [], page: 1 });
     await this.handleSubmit();
   };
 
