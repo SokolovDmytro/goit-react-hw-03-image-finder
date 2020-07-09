@@ -52,14 +52,19 @@ class App extends Component {
   buttonMore = async () => {
     await this.setState(prevState => ({ page: prevState.page + 1 }));
     this.handleSubmit();
+
+    window.scrollTo({
+          top: document.documentElement.scrollHeight,
+          behavior: "smooth"
+        })
   };
 
-  componentDidUpdate() {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth"
-    });
-  }
+  // componentDidUpdate() {
+  //   window.scrollTo({
+  //     top: document.documentElement.scrollHeight,
+  //     behavior: "smooth"
+  //   });
+  // }
 
   setLargeImage = largeImageUrl => {
     this.setState({ largeImageUrl: largeImageUrl });
